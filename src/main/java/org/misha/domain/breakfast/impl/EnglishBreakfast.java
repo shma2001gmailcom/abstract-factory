@@ -1,8 +1,9 @@
 package org.misha.domain.breakfast.impl;
 
-import org.misha.domain.Nation;
 import org.misha.domain.breakfast.Breakfast;
 import org.misha.domain.breakfast.Specification;
+
+import static org.misha.domain.Nation.ENGLISH;
 
 /**
  * author: misha
@@ -12,6 +13,6 @@ import org.misha.domain.breakfast.Specification;
 public class EnglishBreakfast extends Breakfast {
 
     public EnglishBreakfast(final Specification spec) {
-        super(spec, Nation.ENGLISH);
+        super(spec, ENGLISH);
     }
 }

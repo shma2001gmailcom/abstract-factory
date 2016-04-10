@@ -17,7 +17,7 @@ public class Jewish implements Client {
 
     public Jewish(final Specification spec) {
         order = spec;
-        System.out.println(format("I''m Jewish. {0}", order));
+        System.out.println(format("I''m  {0}. {1}", JEWISH, order));
     }
 
     @Override

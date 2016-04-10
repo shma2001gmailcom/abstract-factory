@@ -1,12 +1,11 @@
 package org.misha.domain.client.impl;
 
+import org.misha.domain.Nation;
 import org.misha.domain.breakfast.Specification;
 import org.misha.domain.client.Client;
-import org.misha.domain.Nation;
 
-import java.text.MessageFormat;
-
-import static org.misha.domain.Nation.*;
+import static java.text.MessageFormat.format;
+import static org.misha.domain.Nation.ENGLISH;
 
 /**
  * author: misha
@@ -18,7 +17,7 @@ public class English implements Client {
 
     public English(final Specification spec) {
         order = spec;
-        System.out.println(MessageFormat.format("I''m English. {0}", order.toString()));
+        System.out.println(format("I''m {0}. {1}", ENGLISH, order.toString()));
     }
 
     @Override
