@@ -7,9 +7,9 @@ import org.misha.factory.BreakfastFactory;
 /**
  * author: misha
  * date: 4/10/16
- * time: 12:36 AM
+ * time: 12:37 AM
  */
-public class JewishBreakfastFactory implements BreakfastFactory {
+public class BreakfastFactoryImpl implements BreakfastFactory {
 
     @Override
     public Breakfast getBreakfast(final Client c) {

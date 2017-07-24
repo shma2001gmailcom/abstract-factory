@@ -1,8 +1,7 @@
 package org.misha.domain;
 
 import org.misha.factory.BreakfastFactory;
-import org.misha.factory.impl.EnglishBreakfastFactory;
-import org.misha.factory.impl.JewishBreakfastFactory;
+import org.misha.factory.impl.BreakfastFactoryImpl;
 
 /**
  * author: misha
@@ -10,15 +9,15 @@ import org.misha.factory.impl.JewishBreakfastFactory;
  * time: 12:55 AM
  */
 public enum Nation {
-    ENGLISH(new EnglishBreakfastFactory(), "English"),
+    ENGLISH("English"),
 
-    JEWISH(new JewishBreakfastFactory(), "Jewish");
+    JEWISH("Jewish");
 
     private final String name;
     private final BreakfastFactory breakFastFactory;
 
-    Nation(final BreakfastFactory breakfastFactory, final String nation) {
-        this.breakFastFactory = breakfastFactory;
+    Nation(final String nation) {
+        this.breakFastFactory = new BreakfastFactoryImpl();
         this.name = nation;
     }
 
