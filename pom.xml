@@ -1,6 +1,6 @@
 <!--
   ~ Copyright (c) 2014. Misha's property, all rights reserved.
-  -->
+    -->
 
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
@@ -13,7 +13,7 @@
     <name>abstract-factory</name>
 
     <properties>
-        <application-name>abstract-factor</application-name>
+        <application-name>abstract-factory</application-name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -72,5 +72,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
