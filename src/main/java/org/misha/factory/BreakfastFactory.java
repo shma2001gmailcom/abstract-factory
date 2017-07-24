@@ -1,7 +1,7 @@
 package org.misha.factory;
 
 import org.misha.domain.breakfast.Breakfast;
-import org.misha.domain.breakfast.Specification;
+import org.misha.domain.client.Client;
 
 /**
  * author: misha
@@ -10,5 +10,5 @@ import org.misha.domain.breakfast.Specification;
  */
 public interface BreakfastFactory {
 
-    Breakfast getBreakfast(Specification order);
+    Breakfast getBreakfast(Client c);
 }

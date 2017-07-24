@@ -4,9 +4,6 @@ import org.misha.factory.BreakfastFactory;
 import org.misha.factory.impl.EnglishBreakfastFactory;
 import org.misha.factory.impl.JewishBreakfastFactory;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * author: misha
  * date: 4/10/16
@@ -14,26 +11,24 @@ import java.util.Map;
  */
 public enum Nation {
 
-    ENGLISH,
-    JEWISH;
+    ENGLISH(new EnglishBreakfastFactory(), "English"),
 
-    private static final Map<Nation, BreakfastFactory> factories = new HashMap<Nation, BreakfastFactory>();
+    JEWISH(new JewishBreakfastFactory(), "Jewish");
 
-    static {
-        factories.put(ENGLISH, new EnglishBreakfastFactory());
-        factories.put(JEWISH, new JewishBreakfastFactory());
+    private final String name;
+    private final BreakfastFactory breakFastFactory;
+
+    Nation(final BreakfastFactory breakfastFactory, final String nation) {
+        this.breakFastFactory = breakfastFactory;
+        this.name = nation;
     }
 
     public BreakfastFactory breakFastFactory() {
-        return factories.get(this);
+        return breakFastFactory;
     }
 
     @Override
     public String toString() {
-        switch(this) {
-            case ENGLISH : return "English";
-            case JEWISH : return "Jewish";
-            default: return "Cosmopolitan";
-        }
+        return name;
     }
 }

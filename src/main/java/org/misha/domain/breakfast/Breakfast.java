@@ -1,25 +1,25 @@
 package org.misha.domain.breakfast;
 
 import org.misha.domain.Nation;
+import org.misha.domain.client.Client;
 
-import java.text.MessageFormat;
+import static java.text.MessageFormat.*;
 
 /**
  * author: misha
  * date: 4/10/16
  * time: 12:29 AM
  */
-public abstract class Breakfast {
+public class Breakfast {
     private final Specification specification;
-    private Nation nation;
+    private final Nation nation;
 
-    protected Breakfast(final Specification spec, final Nation n) {
-        specification = spec;
-        nation = n;
+    public Breakfast(final Client c) {
+        specification = c.getSpecification();
+        nation = c.getNation();
     }
 
     public void menu() {
-        System.out.println(MessageFormat.format("{0}\n{1}", specification.getFirst(), specification.getSecond()));
-        System.out.println(MessageFormat.format("{0} breakfast, please.\n", nation));
+        System.out.println(format("-- {0} breakfast: ", nation) + specification.toString().replaceAll("Can I ask ", "") + "\n");
     }
 }

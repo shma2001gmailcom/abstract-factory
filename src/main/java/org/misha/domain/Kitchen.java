@@ -1,4 +1,4 @@
-package org.misha.domain.kitchen;
+package org.misha.domain;
 
 import org.misha.domain.breakfast.Breakfast;
 import org.misha.domain.breakfast.Specification;
@@ -17,11 +17,11 @@ public class Kitchen {
           breakfastFactory = bf;
     }
 
-    private Breakfast getBreakfast(Specification order) {
-        return breakfastFactory.getBreakfast(order);
+    private Breakfast getBreakfast(final Client c) {
+        return breakfastFactory.getBreakfast(c);
     }
 
     public static Breakfast breakfast(final Client client) {
-        return new Kitchen(client.nation().breakFastFactory()).getBreakfast(client.order());
+        return new Kitchen(client.breakfastFactory()).getBreakfast(client);
     }
 }

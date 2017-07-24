@@ -1,8 +1,7 @@
 package org.misha.factory.impl;
 
 import org.misha.domain.breakfast.Breakfast;
-import org.misha.domain.breakfast.Specification;
-import org.misha.domain.breakfast.impl.JewishBreakfast;
+import org.misha.domain.client.Client;
 import org.misha.factory.BreakfastFactory;
 
 /**
@@ -13,7 +12,7 @@ import org.misha.factory.BreakfastFactory;
 public class JewishBreakfastFactory implements BreakfastFactory {
 
     @Override
-    public Breakfast getBreakfast(Specification order) {
-        return new JewishBreakfast(order);
+    public Breakfast getBreakfast(final Client c) {
+        return new Breakfast(c);
     }
 }
