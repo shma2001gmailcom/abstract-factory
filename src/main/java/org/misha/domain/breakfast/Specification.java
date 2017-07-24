@@ -1,19 +1,17 @@
 package org.misha.domain.breakfast;
 
-import org.apache.commons.lang3.StringUtils;
-
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import static java.text.MessageFormat.format;
+import static org.apache.commons.lang3.StringUtils.join;
 
 /**
  * author: misha
  * date: 4/10/16
  * time: 2:57 AM
  */
-public class Specification implements Iterable<String> {
+public class Specification {
     private final List<String> dishes = new ArrayList<>();
 
     public Specification addDish(final String d) {
@@ -23,11 +21,6 @@ public class Specification implements Iterable<String> {
 
     @Override
     public String toString() {
-        return format("Can I ask {0}, please.", StringUtils.join(dishes, " and "));
-    }
-
-    @Override
-    public Iterator<String> iterator() {
-        return dishes.iterator();
+        return format("Can I ask {0}, please.", join(dishes, " and "));
     }
 }
