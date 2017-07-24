@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: misha
+Class-Path: lib/commons-lang3-3.1.jar lib/commons-io-1.3.2.jar lib/log4j-1.2.17.ja
+ r
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_131
+Main-Class: org.misha.Launcher
+

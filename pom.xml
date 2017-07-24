@@ -12,6 +12,13 @@
     <version>1.0-SNAPSHOT</version>
     <name>abstract-factory</name>
 
+    <repositories>
+        <repository>
+            <id>my-local-repo</id>
+            <url>file://${basedir}/lib</url>
+        </repository>
+    </repositories>
+
     <properties>
         <application-name>abstract-factory</application-name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -59,6 +66,29 @@
                     <source>1.8</source>
                     <target>1.8</target>
                     <debug>true</debug>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+                    </archive>
                 </configuration>
             </plugin>
             <plugin>
