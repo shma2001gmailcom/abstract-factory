@@ -7,6 +7,7 @@ import org.misha.domain.client.impl.English;
 import org.misha.domain.client.impl.Jewish;
 
 public class Launcher {
+
     public static void main(String... args) {
         Client english = new English(new Specification().addDish("porridge").addDish("milk"));
         Kitchen.breakfast(english).menu();
