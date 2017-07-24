@@ -10,7 +10,6 @@ import org.misha.factory.impl.JewishBreakfastFactory;
  * time: 12:55 AM
  */
 public enum Nation {
-
     ENGLISH(new EnglishBreakfastFactory(), "English"),
 
     JEWISH(new JewishBreakfastFactory(), "Jewish");

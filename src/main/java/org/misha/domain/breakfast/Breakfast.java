@@ -3,7 +3,7 @@ package org.misha.domain.breakfast;
 import org.misha.domain.Nation;
 import org.misha.domain.client.Client;
 
-import static java.text.MessageFormat.*;
+import static java.text.MessageFormat.format;
 
 /**
  * author: misha
